@@ -2,7 +2,6 @@
 @echo off
 
 if "%1" == "/?" goto Usage
-if "%~1" == "" goto Usage
 
 :: Initialize build configuration
 set BUILD.ARM=N
