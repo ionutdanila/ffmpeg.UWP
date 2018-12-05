@@ -1,0 +1,14 @@
+prefix=../../../../Build/ARM
+exec_prefix=${prefix}
+libdir=../../../../Build/ARM/lib
+includedir=../../../../Build/ARM/include
+
+Name: libswscale
+Description: FFmpeg image rescaling library
+Version: 5.3.100
+Requires: 
+Requires.private: libavutil >= 56.22.100
+Conflicts:
+Libs: -L${libdir}  -lswscale 
+Libs.private: 
+Cflags: -I${includedir}

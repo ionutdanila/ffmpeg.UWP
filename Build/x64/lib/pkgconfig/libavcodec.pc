@@ -1,0 +1,14 @@
+prefix=../../../../Build/x64
+exec_prefix=${prefix}
+libdir=../../../../Build/x64/lib
+includedir=../../../../Build/x64/include
+
+Name: libavcodec
+Description: FFmpeg codec library
+Version: 58.35.100
+Requires: 
+Requires.private: libavutil >= 56.22.100
+Conflicts:
+Libs: -L${libdir}  -lavcodec 
+Libs.private: dxgi.lib d3d11.lib
+Cflags: -I${includedir}

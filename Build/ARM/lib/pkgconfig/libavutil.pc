@@ -1,0 +1,14 @@
+prefix=../../../../Build/ARM
+exec_prefix=${prefix}
+libdir=../../../../Build/ARM/lib
+includedir=../../../../Build/ARM/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 56.22.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil 
+Libs.private: dxgi.lib d3d11.lib bcrypt.lib
+Cflags: -I${includedir}

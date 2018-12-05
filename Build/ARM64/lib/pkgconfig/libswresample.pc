@@ -1,0 +1,14 @@
+prefix=../../../../Build/ARM64
+exec_prefix=${prefix}
+libdir=../../../../Build/ARM64/lib
+includedir=../../../../Build/ARM64/include
+
+Name: libswresample
+Description: FFmpeg audio resampling library
+Version: 3.3.100
+Requires: 
+Requires.private: libavutil >= 56.22.100
+Conflicts:
+Libs: -L${libdir}  -lswresample 
+Libs.private: 
+Cflags: -I${includedir}

@@ -1,0 +1,14 @@
+prefix=../../../../Build/ARM
+exec_prefix=${prefix}
+libdir=../../../../Build/ARM/lib
+includedir=../../../../Build/ARM/include
+
+Name: libavdevice
+Description: FFmpeg device handling library
+Version: 58.5.100
+Requires: 
+Requires.private: libavformat >= 58.20.100, libavcodec >= 58.35.100, libavutil >= 56.22.100
+Conflicts:
+Libs: -L${libdir}  -lavdevice 
+Libs.private: 
+Cflags: -I${includedir}
