@@ -32,7 +32,7 @@ if [ "$1" == "x86" ]; then
 	--enable-demuxer=mpegvideo,h264,rtsp,flv,mjpeg,rawvideo,mpegts,rm,sdp,mpjpeg,h263 \
 	--enable-protocol=http,tcp,udp \
 	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
-	--prefix=../../../Build/x86
+	--prefix=../../../../Build/x86
 	make install
 	popd
 
@@ -65,7 +65,7 @@ elif [ "$1" == "x64" ]; then
 	--enable-demuxer=mpegvideo,h264,rtsp,flv,mjpeg,rawvideo,mpegts,rm,sdp,mpjpeg,h263 \
 	--enable-protocol=http,tcp,udp \
 	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
-	--prefix=../../../Build/x64
+	--prefix=../../../../Build/x64
 	make install
 	popd
 
@@ -100,7 +100,7 @@ elif [ "$1" == "ARM" ]; then
 	--enable-demuxer=mpegvideo,h264,rtsp,flv,mjpeg,rawvideo,mpegts,rm,sdp,mpjpeg,h263 \
 	--enable-protocol=http,tcp,udp \
 	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
-	--prefix=../../../Build/ARM
+	--prefix=../../../../Build/ARM
 	make install
 	popd
 	
@@ -133,7 +133,7 @@ elif [ "$1" == "ARM64" ]; then
 	--enable-demuxer=mpegvideo,h264,rtsp,flv,mjpeg,rawvideo,mpegts,rm,sdp,mpjpeg,h263 \
 	--enable-protocol=http,tcp,udp \
 	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
-	--prefix=../../../Build/ARM64
+	--prefix=../../../../Build/ARM64
 	make install
 	popd
 
