@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata minClientVersion="2.5">
+    <id>FFmpeg.UWP</id>
+    <version>4.1.13</version>
+    <title>FFmpeg UWP Libraries</title>
+    <projectUrl>https://github.com/ionutdanila/ffmpeg.UWP</projectUrl>
+    <authors>Ionut Danila</authors>
+	<owners>Ionut Danila</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>FFmpeg libraries (x86, x64, ARM, ARM64) for UWP (Universal Windows Platform)</description>
+	<copyright>Copyright 2018 Ionut Danila</copyright>
+    <tags>ffmpeg, x86, x64, arm, arm64, uwp, ffmpeg-libraries</tags>
+	<iconUrl>https://www.ffmpeg.org/favicon.ico</iconUrl>
+  </metadata>  
+  
+  <files>
+    <file src="native\*.props" target="build\native" />
+	<file src="uap10.0\*.targets" target="build\uap10.0" />
+	
+    <file src="..\Build\x64\include\**" target="include" />
+
+    <file src="..\Build\x64\bin\*.lib" target="link\win10-x64-aot" />
+    <file src="..\Build\x64\bin\*.dll" target="runtimes\win10-x64-aot\native" />
+    <file src="..\Build\x86\bin\*.lib" target="link\win10-x86-aot" />
+    <file src="..\Build\x86\bin\*.dll" target="runtimes\win10-x86-aot\native" />
+    <file src="..\Build\arm64\bin\*.lib" target="link\win10-arm64-aot" />
+    <file src="..\Build\arm64\bin\*.dll" target="runtimes\win10-arm64-aot\native" />
+    <file src="..\Build\arm\bin\*.lib" target="link\win10-arm-aot" />
+    <file src="..\Build\arm\bin\*.dll" target="runtimes\win10-arm-aot\native" />
+  </files>
+</package>

@@ -15,10 +15,12 @@
         </Link>
     </ItemDefinitionGroup>
 	
-    <ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
+	<ItemGroup Condition="'$(TargetPlatformIdentifier)' == 'UAP'">
         <CopyFileToFolders Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(Platform)-aot\native\*.dll">
             <DeploymentContent>true</DeploymentContent>
             <FileType>Document</FileType>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </CopyFileToFolders>
     </ItemGroup>
+	
 </Project>
