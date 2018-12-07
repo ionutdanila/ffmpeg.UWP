@@ -40,7 +40,7 @@ Download and install [Microsoft Visual Studio 2017](https://visualstudio.microso
 Download [gas-preprocessor.pl](https://github.com/ionutdanila/ffmpeg.UWP/blob/master/Dependencies/gas-preprocessor.pl "gas-preprocessor.pl") Perl script and place it in your MSYS2 path (eg.: C:\msys64\usr\bin\gas-preprocessor.pl)
 
 ## Compilation
-Invoke `BuildFFmpeg.bat` without any paramters script to build the libraries on all available architectures (x86, x64, ARM, ARM64). Also, you can invoke the script with parameters:
+Invoke `BuildFFmpeg.bat` without any parameters script to build the libraries on all available architectures (x86, x64, ARM, ARM64). Also, you can invoke the script with parameters:
 ```
     BuildFFmpeg.bat					- Build for UWP ARM, x64, x86 and ARM64
     BuildFFmpeg.bat ARM64			- Build for UWP ARM only
