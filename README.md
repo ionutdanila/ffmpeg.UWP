@@ -10,7 +10,8 @@
 The original compilation guide for WinRT/UWP can be found on [FFmpeg website](https://trac.ffmpeg.org/wiki/CompilationGuide/WinRT "ffmpeg website"). I also extended the instructions from [Microsoft FFmpegInterop project](https://github.com/Microsoft/FFmpegInterop/blob/master/README.md "Microsoft FFmpegInterop project"). This version builds libraries only for Windows 10 (UWP) using Visual Studio 2017 (this way we can also build for ARM64).
 
 ## License
-FFmpeg offers the code under [GNU Lesser General Public License version 2.1 or later (LGPL v2.1+)](https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md "LGPL 2.1")
+- [FFmpeg](https://github.com/FFmpeg/FFmpeg "FFmpeg") offers the code under [GNU Lesser General Public License version 2.1 or later (LGPL v2.1+)](https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md "LGPL 2.1")
+- [gas-preprocessor.pl](https://github.com/ionutdanila/ffmpeg.UWP/blob/master/Dependencies/gas-preprocessor.pl "gas-preprocessor.pl") is licensed under [GNU Lesser General Public License version 2.1 or later (LGPL v2.1+)](https://github.com/ionutdanila/ffmpeg.UWP/blob/master/Dependencies/gas-preprocessor.pl)
 
 ## Prerequisites
 #### FFmpeg source code
