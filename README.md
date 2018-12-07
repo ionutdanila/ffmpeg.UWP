@@ -15,7 +15,7 @@ The original compilation guide for WinRT/UWP can be found on [FFmpeg website](ht
 
 ## Prerequisites
 #### FFmpeg source code
-The project uses an embedded git submodule that points to the latest tested release of FFmpeg.
+The project uses an [embedded git submodule](git://github.com/FFmpeg/FFmpeg.git "embedded git submodule") that points to the latest tested release of FFmpeg.
 
 ---
 #### Visual Studio Setup
