@@ -1,9 +1,22 @@
-# ffmpeg.UWP
-##### Build ffmpeg libraries for UWP (x86, x64, ARM and ARM64)
-##### The resulted libraries can be used with [FFmpegInterop Project](https://github.com/Microsoft/FFmpegInterop "FFmpegInterop Project") 
+# FFmpeg for UWP (Universal Windows Platform)
+
+### You can download the latest compiled libraries (FFmpeg 4.1) from [here](https://github.com/ionutdanila/ffmpeg.UWP/releases "here").
+---
+## Scope of this project
+- Build FFmpeg libraries for UWP (x86, x64, ARM and ARM64) in order to port applications to UWP
+- The resulted libraries can be used with [FFmpegInterop Project](https://github.com/Microsoft/FFmpegInterop "FFmpegInterop Project") or any other application that requires FFmpeg libraries to run on UWP (usually C++/CX projects)
+
+## Disclaimer
+The original compilation guide for WinRT/UWP can be found on [FFmpeg website](https://trac.ffmpeg.org/wiki/CompilationGuide/WinRT "ffmpeg website"). I also extended the instructions from [Microsoft FFmpegInterop project](https://github.com/Microsoft/FFmpegInterop/blob/master/README.md "Microsoft FFmpegInterop project"). This version builds libraries only for Windows 10 (UWP) using Visual Studio 2017 (this way we can also build for ARM64).
+
+## License
+FFmpeg offers the code under [GNU Lesser General Public License version 2.1 or later (LGPL v2.1+)](https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md "LGPL 2.1")
 
 ## Prerequisites
+#### FFmpeg source code
+The project uses an embedded git submodule that points to the latest tested release of FFmpeg.
 
+---
 #### Visual Studio Setup
 Download and install [Microsoft Visual Studio 2017](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15 "Microsoft Visual Studio 2017") on a Windows 10 machine.
 
@@ -25,3 +38,11 @@ Download and install [Microsoft Visual Studio 2017](https://visualstudio.microso
 --- 
 #### gas-preprocessor Setup
 Download [gas-preprocessor.pl](https://github.com/ionutdanila/ffmpeg.UWP/blob/master/Dependencies/gas-preprocessor.pl "gas-preprocessor.pl") Perl script and place it in your MSYS2 path (eg.: C:\msys64\usr\bin\gas-preprocessor.pl)
+
+## Compilation
+Invoke `BuildFFmpeg.bat` without any paramters script to build the libraries on all available architectures (x86, x64, ARM, ARM64). Also, you can invoke the script with parameters:
+```
+    BuildFFmpeg.bat					- Build for UWP ARM, x64, x86 and ARM64
+    BuildFFmpeg.bat ARM64			- Build for UWP ARM only
+    BuildFFmpeg.bat x86 x64			- Build for UWP x86 and x64 only
+```
