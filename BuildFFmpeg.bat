@@ -127,6 +127,8 @@ set INCLUDE=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\include;%VS1
 %MSYS2_BIN% --login -x %~dp0FFmpegConfig.sh ARM64
 endlocal
 
+goto Cleanup
+
 :: Display help message
 :Usage
 echo The correct usage is:
