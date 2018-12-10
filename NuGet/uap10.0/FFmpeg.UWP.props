@@ -3,10 +3,11 @@
     
   <ItemGroup>
 	<NativeLibs Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(Platform)-aot\native\*.dll" />
-	  <None Include="@(NativeLibs)">
+	
+	<Content Include="@(NativeLibs)">
 	  <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
-	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	</None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
-
+  
 </Project>
