@@ -6,7 +6,7 @@
 	
 	<Content Include="@(NativeLibs)">
 	  <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   
