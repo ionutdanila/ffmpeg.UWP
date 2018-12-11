@@ -6,7 +6,6 @@
     <title>FFmpeg UWP Libraries</title>
     <projectUrl>https://github.com/ionutdanila/ffmpeg.UWP</projectUrl>
     <authors>Ionut Danila</authors>
-	<owners>Ionut Danila</owners>
 	<language>en-US</language>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>FFmpeg libraries (x86, x64, ARM, ARM64) for UWP (Universal Windows Platform)</description>
