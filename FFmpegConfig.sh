@@ -12,6 +12,7 @@ if [ "$1" == "x86" ]; then
 	../../../configure \
 	--toolchain=msvc \
 	--disable-programs \
+	--disable-doc \
 	--arch=x86 \
 	--target-os=win32 \
 	--extra-cflags="-MD -DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=0x0A00" \
@@ -33,6 +34,7 @@ if [ "$1" == "x86" ]; then
 	--enable-protocol=http,tcp,udp \
 	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
 	--prefix=../../../../Build/x86
+	make -j8
 	make install
 	popd
 
@@ -45,6 +47,7 @@ elif [ "$1" == "x64" ]; then
 	../../../configure \
 	--toolchain=msvc \
 	--disable-programs \
+	--disable-doc \
 	--arch=x86_64 \
 	--target-os=win32 \
 	--extra-cflags="-MD -DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=0x0A00" \
@@ -66,6 +69,7 @@ elif [ "$1" == "x64" ]; then
 	--enable-protocol=http,tcp,udp \
 	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
 	--prefix=../../../../Build/x64
+	make -j8
 	make install
 	popd
 
@@ -78,6 +82,7 @@ elif [ "$1" == "ARM" ]; then
 	../../../configure \
 	--toolchain=msvc \
 	--disable-programs \
+	--disable-doc \
 	--arch=arm \
 	--as=armasm \
 	--cpu=armv7 \
@@ -101,6 +106,7 @@ elif [ "$1" == "ARM" ]; then
 	--enable-protocol=http,tcp,udp \
 	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
 	--prefix=../../../../Build/ARM
+	make -j8
 	make install
 	popd
 	
@@ -113,6 +119,7 @@ elif [ "$1" == "ARM64" ]; then
 	../../../configure \
 	--toolchain=msvc \
 	--disable-programs \
+	--disable-doc \
 	--arch=arm64 \
 	--target-os=win32 \
 	--extra-cflags="-MD -DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=0x0A00 -D__ARM_PCS_VFP" \
@@ -134,6 +141,7 @@ elif [ "$1" == "ARM64" ]; then
 	--enable-protocol=http,tcp,udp \
 	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
 	--prefix=../../../../Build/ARM64
+	make -j8
 	make install
 	popd
 
