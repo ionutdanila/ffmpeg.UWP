@@ -6,7 +6,7 @@
 ---
 ## Scope of this project
 - Build FFmpeg libraries for UWP (x86, x64, ARM and ARM64) in order to port applications to UWP
-- The resulted libraries can be used with [FFmpegInterop Project](https://github.com/Microsoft/FFmpegInterop "FFmpegInterop Project") or any other application that requires FFmpeg libraries to run on UWP (usually C++/CX projects)
+- The resulted libraries can be used with the [FFmpegInterop Project](https://github.com/ionutdanila/FFmpegInterop "FFmpegInterop Project") or any other application that requires FFmpeg libraries to run on UWP (usually C++/CX projects)
 
 ## Disclaimer
 The original compilation guide for WinRT/UWP can be found on [FFmpeg website](https://trac.ffmpeg.org/wiki/CompilationGuide/WinRT "ffmpeg website"). I extended the instructions from [Microsoft FFmpegInterop project](https://github.com/Microsoft/FFmpegInterop/blob/master/README.md "Microsoft FFmpegInterop project"). This project builds libraries only for Windows 10 (UWP) using Visual Studio 2017 (this way we can also build for ARM64).
