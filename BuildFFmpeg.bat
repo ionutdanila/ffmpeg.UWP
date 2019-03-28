@@ -43,7 +43,7 @@ if %BUILD.ARM%==N (
 
 :: Verifying ffmpeg directory
 echo Verifying ffmpeg directory...
-pushd ffmpeg
+pushd FFmpeg
 if not exist configure (
     echo:
     echo configure is not found in ffmpeg folder. Ensure this folder is populated with ffmpeg snapshot
@@ -59,17 +59,15 @@ if defined MSYS2_BIN (
 echo:
 echo MSYS2 is needed. Set it up properly and provide the executable path in MSYS2_BIN environment variable. E.g.
 echo:
-echo     set MSYS2_BIN="D:\Development\msys64\usr\bin\bash.exe"
+echo     set MSYS2_BIN="E:\Development\msys64\usr\bin\bash.exe"
 echo:
 echo See https://trac.ffmpeg.org/wiki/CompilationGuide/WinRT#PrerequisitesandFirstTimeSetupInstructions
+echo:
+echo Also, make sure that VS150COMCOMNTOOLS is correctly set in your environment varialbes. E.g.
+echo:
+echo     VS150COMCOMNTOOLS=C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\Tools\
+echo:
 goto Cleanup
-
-:: Check for required tools
-if not defined VS150COMCOMNTOOLS (
-    echo:
-    echo VS150COMCOMNTOOLS environment variable is not found. Check your Visual Studio 2017 installation
-    goto Cleanup
-)
 
 :UWPx86
 if %BUILD.x86%==N goto UWPx64

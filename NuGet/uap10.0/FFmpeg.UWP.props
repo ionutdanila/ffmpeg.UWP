@@ -2,9 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     
   <ItemGroup>
-	<NativeLibs Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(Platform)-aot\native\*.dll" />
+	<NativeDlls Include="$(MSBuildThisFileDirectory)..\..\runtimes\win10-$(Platform)-aot\native\*.dll" />
 	
-	<Content Include="@(NativeLibs)">
+	<Content Include="@(NativeDlls)">
 	  <Link>%(RecursiveDir)%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
