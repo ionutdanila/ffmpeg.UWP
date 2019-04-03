@@ -76,8 +76,8 @@ echo:
 
 setlocal
 call "%VS150COMCOMNTOOLS%..\..\VC\Auxiliary\Build\vcvarsall.bat" x86 store
-set LIB=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\x86;%UniversalCRTSdkDir%lib\%UCRTVersion%\ucrt\x86;%UniversalCRTSdkDir%lib\%UCRTVersion%\um\x86;
-set LIBPATH=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\x86;
+set LIB=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\x86\store;%UniversalCRTSdkDir%lib\%UCRTVersion%\ucrt\x86;%UniversalCRTSdkDir%lib\%UCRTVersion%\um\x86;
+set LIBPATH=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\x86\store;
 set INCLUDE=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\include;%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\atlmfc\include;%UniversalCRTSdkDir%Include\%UCRTVersion%\ucrt;%UniversalCRTSdkDir%Include\%UCRTVersion%\um;%UniversalCRTSdkDir%Include\%UCRTVersion%\shared;%UniversalCRTSdkDir%Include\%UCRTVersion%\winrt;
 
 %MSYS2_BIN% --login -x %~dp0FFmpegConfig.sh x86
@@ -90,8 +90,8 @@ echo:
 
 setlocal
 call "%VS150COMCOMNTOOLS%..\..\VC\Auxiliary\Build\vcvarsall.bat" x64 store
-set LIB=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\x64;%UniversalCRTSdkDir%lib\%UCRTVersion%\ucrt\x64;%UniversalCRTSdkDir%lib\%UCRTVersion%\um\x64;
-set LIBPATH=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\x64;
+set LIB=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\x64\store;%UniversalCRTSdkDir%lib\%UCRTVersion%\ucrt\x64;%UniversalCRTSdkDir%lib\%UCRTVersion%\um\x64;
+set LIBPATH=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\x64\store;
 set INCLUDE=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\include;%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\atlmfc\include;%UniversalCRTSdkDir%Include\%UCRTVersion%\ucrt;%UniversalCRTSdkDir%Include\%UCRTVersion%\um;%UniversalCRTSdkDir%Include\%UCRTVersion%\shared;%UniversalCRTSdkDir%Include\%UCRTVersion%\winrt;
 
 %MSYS2_BIN% --login -x %~dp0FFmpegConfig.sh x64
@@ -104,8 +104,8 @@ echo:
 
 setlocal
 call "%VS150COMCOMNTOOLS%..\..\VC\Auxiliary\Build\vcvarsall.bat" x86_arm store
-set LIB=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\arm;%UniversalCRTSdkDir%lib\%UCRTVersion%\ucrt\arm;%UniversalCRTSdkDir%lib\%UCRTVersion%\um\arm;
-set LIBPATH=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\arm;
+set LIB=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\arm\store;%UniversalCRTSdkDir%lib\%UCRTVersion%\ucrt\arm;%UniversalCRTSdkDir%lib\%UCRTVersion%\um\arm;
+set LIBPATH=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\arm\store;
 set INCLUDE=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\include;%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\atlmfc\include;%UniversalCRTSdkDir%Include\%UCRTVersion%\ucrt;%UniversalCRTSdkDir%Include\%UCRTVersion%\um;%UniversalCRTSdkDir%Include\%UCRTVersion%\shared;%UniversalCRTSdkDir%Include\%UCRTVersion%\winrt;
 
 %MSYS2_BIN% --login -x %~dp0FFmpegConfig.sh ARM
@@ -118,8 +118,8 @@ echo:
 
 setlocal
 call "%VS150COMCOMNTOOLS%..\..\VC\Auxiliary\Build\vcvarsall.bat" x86_arm64 store
-set LIB=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\arm64;%UniversalCRTSdkDir%lib\%UCRTVersion%\ucrt\arm64;%UniversalCRTSdkDir%lib\%UCRTVersion%\um\arm64;
-set LIBPATH=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\arm64;
+set LIB=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\arm64\store;%UniversalCRTSdkDir%lib\%UCRTVersion%\ucrt\arm64;%UniversalCRTSdkDir%lib\%UCRTVersion%\um\arm64;
+set LIBPATH=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\lib\arm64\store;
 set INCLUDE=%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\include;%VS150COMCOMNTOOLS%..\..\VC\Tools\MSVC\%VCToolsVersion%\atlmfc\include;%UniversalCRTSdkDir%Include\%UCRTVersion%\ucrt;%UniversalCRTSdkDir%Include\%UCRTVersion%\um;%UniversalCRTSdkDir%Include\%UCRTVersion%\shared;%UniversalCRTSdkDir%Include\%UCRTVersion%\winrt;
 
 %MSYS2_BIN% --login -x %~dp0FFmpegConfig.sh ARM64
