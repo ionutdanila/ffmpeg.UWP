@@ -1,7 +1,7 @@
 # FFmpeg for UWP (Universal Windows Platform)
 
 #### You can install the NuGet Package (FFmpeg UWP 4.1.2) from [here](https://www.nuget.org/packages/FFmpeg.UWP/ "here").
-#### You can download the latest compiled libraries (FFmpeg UWP 4.1) from [here](https://github.com/ionutdanila/ffmpeg.UWP/releases "here").
+#### You can download the latest compiled libraries (FFmpeg UWP 4.1.2) from [here](https://github.com/ionutdanila/ffmpeg.UWP/releases "here").
 
 ---
 ## Scope of this project
