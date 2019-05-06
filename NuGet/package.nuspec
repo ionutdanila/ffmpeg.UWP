@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata minClientVersion="3.3">
     <id>FFmpeg.UWP</id>
-    <version>4.1.2.2</version>
+    <version>4.1.3</version>
     <title>FFmpeg UWP Libraries</title>
     <projectUrl>https://github.com/ionutdanila/ffmpeg.UWP</projectUrl>
     <authors>Ionut Danila</authors>
