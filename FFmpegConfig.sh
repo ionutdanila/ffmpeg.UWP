@@ -1,150 +1,205 @@
 #!/bin/bash
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-echo "Make UWP"
-
-if [ "$1" == "x86" ]; then
-	echo "Make UWP x86"
-	pushd $DIR/ffmpeg
-	rm -rf Output/UWP/x86
-	mkdir -p Output/UWP/x86
-	cd Output/UWP/x86
-	../../../configure \
-	--toolchain=msvc \
-	--disable-programs \
-	--disable-doc \
-	--arch=x86 \
-	--target-os=win32 \
-	--extra-cflags="-MD -DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=0x0A00" \
-	--extra-ldflags="-APPCONTAINER WindowsApp.lib" \
-	--disable-everything \
-	--disable-debug \
-	--enable-thumb \
-	--enable-shared \
-	--enable-cross-compile \
-	--enable-d3d11va \
-	--disable-dxva2 \
-	--enable-small \
-	--enable-network \
-	--enable-runtime-cpudetect \
-	--enable-decoder=mjpeg,mpeg4,mpegvideo,h264,flv,rawvideo,flashsv,flashsv2 \
-	--enable-decoder=h264_dxva2,nellymoser,adpcm_swf,aac,pcm_alaw,pcm_f32be,pcm_f32le,pcm_f64be,pcm_f64le,pcm_mulaw,pcm_s16be,pcm_s16le,pcm_s24be,pcm_s24le,pcm_s32be,pcm_s32le,pcm_s8,pcm_u16be,pcm_u16le,pcm_u24be,pcm_u24le,pcm_u32be,pcm_u32le,pcm_u8 \
-	--enable-parser=mpeg4video,mpegaudio,mpegvideo,h261,h264 \
-	--enable-demuxer=mpegvideo,h264,rtsp,flv,mjpeg,rawvideo,mpegts,rm,sdp,mpjpeg,h263 \
-	--enable-protocol=http,tcp,udp \
-	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
-	--prefix=../../../../Build/x86
-	make -j8
-	make install
-	popd
-
-elif [ "$1" == "x64" ]; then
-	echo "Make UWP x64"
-	pushd $DIR/ffmpeg
-	rm -rf Output/UWP/x64
-	mkdir -p Output/UWP/x64
-	cd Output/UWP/x64
-	../../../configure \
-	--toolchain=msvc \
-	--disable-programs \
-	--disable-doc \
-	--arch=x86_64 \
-	--target-os=win32 \
-	--extra-cflags="-MD -DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=0x0A00" \
-	--extra-ldflags="-APPCONTAINER WindowsApp.lib" \
-	--disable-everything \
-	--disable-debug \
-	--enable-thumb \
-	--enable-shared \
-	--enable-cross-compile \
-	--enable-d3d11va \
-	--disable-dxva2 \
-	--enable-small \
-	--enable-network \
-	--enable-runtime-cpudetect \
-	--enable-decoder=mjpeg,mpeg4,mpegvideo,h264,flv,rawvideo,flashsv,flashsv2 \
-	--enable-decoder=h264_dxva2,nellymoser,adpcm_swf,aac,pcm_alaw,pcm_f32be,pcm_f32le,pcm_f64be,pcm_f64le,pcm_mulaw,pcm_s16be,pcm_s16le,pcm_s24be,pcm_s24le,pcm_s32be,pcm_s32le,pcm_s8,pcm_u16be,pcm_u16le,pcm_u24be,pcm_u24le,pcm_u32be,pcm_u32le,pcm_u8 \
-	--enable-parser=mpeg4video,mpegaudio,mpegvideo,h261,h264 \
-	--enable-demuxer=mpegvideo,h264,rtsp,flv,mjpeg,rawvideo,mpegts,rm,sdp,mpjpeg,h263 \
-	--enable-protocol=http,tcp,udp \
-	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
-	--prefix=../../../../Build/x64
-	make -j8
-	make install
-	popd
-
-elif [ "$1" == "ARM" ]; then
-	echo "Make UWP ARM"
-	pushd $DIR/ffmpeg
-	rm -rf Output/UWP/ARM
-	mkdir -p Output/UWP/ARM
-	cd Output/UWP/ARM
-	../../../configure \
-	--toolchain=msvc \
-	--disable-programs \
-	--disable-doc \
-	--arch=arm \
-	--as=armasm \
-	--cpu=armv7 \
-	--target-os=win32 \
-	--extra-cflags="-MD -DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=0x0A00 -D__ARM_PCS_VFP" \
-	--extra-ldflags="-APPCONTAINER WindowsApp.lib" \
-	--disable-everything \
-	--disable-debug \
-	--enable-thumb \
-	--enable-shared \
-	--enable-cross-compile \
-	--enable-d3d11va \
-	--disable-dxva2 \
-	--enable-small \
-	--enable-network \
-	--enable-runtime-cpudetect \
-	--enable-decoder=mjpeg,mpeg4,mpegvideo,h264,flv,rawvideo,flashsv,flashsv2 \
-	--enable-decoder=h264_dxva2,nellymoser,adpcm_swf,aac,pcm_alaw,pcm_f32be,pcm_f32le,pcm_f64be,pcm_f64le,pcm_mulaw,pcm_s16be,pcm_s16le,pcm_s24be,pcm_s24le,pcm_s32be,pcm_s32le,pcm_s8,pcm_u16be,pcm_u16le,pcm_u24be,pcm_u24le,pcm_u32be,pcm_u32le,pcm_u8 \
-	--enable-parser=mpeg4video,mpegaudio,mpegvideo,h261,h264 \
-	--enable-demuxer=mpegvideo,h264,rtsp,flv,mjpeg,rawvideo,mpegts,rm,sdp,mpjpeg,h263 \
-	--enable-protocol=http,tcp,udp \
-	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
-	--prefix=../../../../Build/ARM
-	make -j8
-	make install
-	popd
-	
-elif [ "$1" == "ARM64" ]; then
-	echo "Make UWP ARM64"
-	pushd $DIR/ffmpeg
-	rm -rf Output/UWP/ARM64
-	mkdir -p Output/UWP/ARM64
-	cd Output/UWP/ARM64
-	../../../configure \
-	--toolchain=msvc \
-	--disable-programs \
-	--disable-doc \
-	--arch=arm64 \
-	--target-os=win32 \
-	--extra-cflags="-MD -DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=0x0A00 -D__ARM_PCS_VFP" \
-	--extra-ldflags="-APPCONTAINER WindowsApp.lib" \
-	--disable-everything \
-	--disable-debug \
-	--enable-thumb \
-	--enable-shared \
-	--enable-cross-compile \
-	--enable-d3d11va \
-	--disable-dxva2 \
-	--enable-small \
-	--enable-network \
-	--enable-runtime-cpudetect \
-	--enable-decoder=mjpeg,mpeg4,mpegvideo,h264,flv,rawvideo,flashsv,flashsv2 \
-	--enable-decoder=h264_dxva2,nellymoser,adpcm_swf,aac,pcm_alaw,pcm_f32be,pcm_f32le,pcm_f64be,pcm_f64le,pcm_mulaw,pcm_s16be,pcm_s16le,pcm_s24be,pcm_s24le,pcm_s32be,pcm_s32le,pcm_s8,pcm_u16be,pcm_u16le,pcm_u24be,pcm_u24le,pcm_u32be,pcm_u32le,pcm_u8 \
-	--enable-parser=mpeg4video,mpegaudio,mpegvideo,h261,h264 \
-	--enable-demuxer=mpegvideo,h264,rtsp,flv,mjpeg,rawvideo,mpegts,rm,sdp,mpjpeg,h263 \
-	--enable-protocol=http,tcp,udp \
-	--enable-hwaccel=h264_dxva2,h264_d3d11va,h264_d3d11va2,h264_cuvid \
-	--prefix=../../../../Build/ARM64
-	make -j8
-	make install
-	popd
-
+# Parse the options
+options=$(getopt -o "" --long arch:,app-platform:,settings:,crt:,compiler-rsp:,prefast:,sarif-logs,fuzzing -n "$0" -- "$@")
+if [ $? -ne 0 ]; then
+    echo "ERROR: Invalid option(s)"
+    exit 1
 fi
 
-exit 0
+eval set -- "$options"
+
+while true; do
+    case "$1" in
+        --arch)
+            arch=$2
+            shift 2
+            ;;
+        --app-platform)
+            case "${2,,}" in
+                desktop)
+                    app_platform_settings="--extra-cflags=\"-DWINAPI_FAMILY=WINAPI_FAMILY_DESKTOP_APP\""
+                    ;;
+                onecore)
+                    app_platform_settings="\
+                        --extra-cflags=\"-DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=0x0A00\" \
+                        --extra-ldflags=\"-APPCONTAINER WindowsApp.lib -NODEFAULTLIB:kernel32.lib -DEFAULTLIB:onecore.lib\""
+                    ;;
+                uwp)
+                    app_platform_settings="\
+                        --extra-cflags=\"-DWINAPI_FAMILY=WINAPI_FAMILY_APP -D_WIN32_WINNT=0x0A00\" \
+                        --extra-ldflags=\"-APPCONTAINER WindowsApp.lib\""
+                    ;;
+                *)
+                    echo "Error: Invalid value for --app-platform: $2. Expected: desktop, onecore, or uwp"
+                    exit 1
+                    ;;
+            esac
+            shift 2
+            ;;
+        --crt)
+            crt=$2
+            case "${2,,}" in
+                dynamic)
+                    crt_settings="--extra-cflags=\"-MD\""
+                    ;;
+                hybrid)
+                    # The hybrid CRT is a technique using the Universal CRT AND the static CRT to get functional coverage
+                    # without the overhead of the static CRT or the external dependency of the dynamic CRT.
+                    #
+                    # Learn more about the hybrid CRT:
+                    # - https://github.com/microsoft/WindowsAppSDK/blob/main/docs/Coding-Guidelines/HybridCRT.md
+                    # - https://www.youtube.com/watch?v=bNHGU6xmUzE&t=977s
+                    crt_settings="--extra-cflags=\"-MT\" --extra-ldflags=\"-NODEFAULTLIB:libucrt.lib -DEFAULTLIB:ucrt.lib\""
+                    ;;
+                static)
+                    crt_settings="--extra-cflags=\"-MT\""
+                    ;;
+                *)
+                    echo "Error: Invalid value for --crt: $2. Expected: dynamic, hybrid, or static"
+                    exit 1
+                    ;;
+            esac
+            shift 2
+            ;;
+        --settings)
+            user_settings=$2
+            shift 2
+            ;;
+        --compiler-rsp)
+            # Convert the compiler response file path from Windows to Unix format
+            rsp="$(cygpath --unix "$2")"
+
+            compiler_rsp_settings+="--extra-cflags=\"@$rsp\""
+            shift 2
+            ;;
+        --prefast)
+            # Convert the ruleset path from Windows to Unix format
+            ruleset="$(cygpath --unix "$2")"
+
+            prefast_settings="\
+                --extra-cflags=\"-analyze -analyze:log:includesuppressed -analyze:log:format:sarif -analyze:plugin \
+                EspXEngine.dll -analyze:ruleset $ruleset\""
+            shift 2
+            ;;
+        --sarif-logs)
+            sarif_logs=true
+            shift
+            ;;
+        --fuzzing)
+            fuzzing=true
+            shift
+            ;;
+        --)
+            shift
+            break
+            ;;
+        *)
+            echo "ERROR: Invalid option: -$1" 1>&2
+            exit 1
+            ;;
+    esac
+done
+
+# Common settings
+common_settings="\
+    --toolchain=msvc \
+    --target-os=win32 \
+    --disable-programs \
+    --disable-doc \
+	--disable-debug \
+    --disable-dxva2 \
+	--enable-shared \
+	--enable-cross-compile \
+	--enable-d3d11va \
+	--enable-small \
+	--enable-network \
+	--enable-runtime-cpudetect \
+    --extra-cflags=\"-guard:cf -Qspectre -Gy -Gw\" \
+    --extra-ldflags=\"-PROFILE -GUARD:CF -DYNAMICBASE -OPT:ICF -OPT:REF\" \
+    "
+
+# Architecture-specific settings
+if [[ -z $arch ]]; then
+    echo "ERROR: No architecture set" 1>&2
+    exit 1
+elif [[ $arch == "x86" ]]; then
+    arch_settings="\
+        --arch=x86 \
+        --extra-ldflags=\"-CETCOMPAT\" \
+        --prefix=$dir/Build/$arch \
+        "
+elif [[ $arch == "x64" ]]; then
+    arch_settings="\
+        --arch=x86_64 \
+        --extra-ldflags=\"-CETCOMPAT\" \
+        --prefix=$dir/Build/$arch \
+        "
+elif [[ $arch == "arm64" ]]; then
+    arch_settings="\
+        --arch=arm64 \
+        --as=armasm64 \
+        --cpu=armv7 \
+        --enable-thumb \
+        --extra-cflags=\"-D__ARM_PCS_VFP\" \
+        --prefix=$dir/Build/$arch \
+        "
+else
+    echo "ERROR: $arch is not a valid architecture" 1>&2
+    exit 1
+fi
+
+if [[ $sarif_logs ]]; then
+    sarif_logs_settings="--extra-cflags=\"-experimental:log $dir/ffmpeg/Output/$arch/\""
+fi
+
+# Fuzzer-specific settings
+if [[ $fuzzing ]]; then
+    if [[ "$arch" == "arm" || "$arch" == "arm64" ]]; then
+        echo "ERROR: Fuzzing is not supported on ARM/ARM64 architectures" 1>&2
+        exit 1
+    fi
+
+    fuzz_settings="\
+        --extra-cflags=\"-fsanitize=address -fsanitize-coverage=inline-8bit-counters -fsanitize-coverage=edge \
+        -fsanitize-coverage=trace-cmp -fsanitize-coverage=trace-div\" "
+
+    # Add sancov.lib or libsancov.lib based on CRT
+    if [[ $crt == "dynamic" ]]; then
+        fuzz_settings+="--extra-ldflags=\"-DEFAULTLIB:sancov.lib\""
+    else
+        fuzz_settings+="--extra-ldflags=\"-DEFAULTLIB:libsancov.lib\""
+    fi
+fi
+
+# Build FFmpeg
+pushd $dir/ffmpeg > /dev/null
+
+rm -rf Output/$arch
+mkdir -p Output/$arch
+cd Output/$arch
+
+eval ../../configure \
+    $common_settings \
+    $arch_settings \
+    $app_platform_settings \
+    $crt_settings \
+    $onecore_settings \
+    $user_settings \
+    $compiler_rsp_settings \
+    $prefast_settings \
+    $sarif_logs_settings \
+    $fuzz_settings &&
+make -j`nproc` &&
+make install
+
+result=$?
+
+popd > /dev/null
+
+if [ $result -ne 0 ]; then
+    echo "ERROR: FFmpeg build for $arch failed with exit code $result" 1>&2
+fi
+
+exit $result
