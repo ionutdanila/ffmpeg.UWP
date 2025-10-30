@@ -4,15 +4,18 @@
     <id>FFmpeg.UWP</id>
     <version>8.0.0</version>
     <title>FFmpeg UWP Libraries</title>
-    <projectUrl>https://github.com/ionutdanila/ffmpeg.UWP</projectUrl>
+    <projectUrl>https://www.ffmpeg.org</projectUrl>
     <authors>Ionut Danila</authors>
 	  <language>en-US</language>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>FFmpeg libraries (x86, x64, ARM, ARM64) for UWP (Universal Windows Platform)</description>
+    <description>FFmpeg libraries (x86, x64, ARM64) for UWP (Universal Windows Platform)</description>
 	  <copyright>Ionut Danila</copyright>
-    <tags>ffmpeg, x86, x64, arm, arm64, uwp, ffmpeg-libraries</tags>
-	  <iconUrl>https://www.ffmpeg.org/favicon.ico</iconUrl>
+    <tags>ffmpeg, x86, x64, arm64, uwp, ffmpeg-libraries</tags>
+	  <icon>docs\icon.png</icon>
 	  <license type="expression">LGPL-2.1-or-later</license>
+    <readme>docs\README.md</readme>
+    <repository type="git" url="https://github.com/ionutdanila/ffmpeg.UWP" branch="master" commit="ca5a2589f0c479a6359944dc5d58b9fe3e1bbb60" />
+    <releaseNotes>Update ffmpeg to 8.0 "Huffman"</releaseNotes>
   </metadata>  
   
   <files>
@@ -28,8 +31,8 @@
     <file src="..\Build\x86\bin\*.dll" target="runtimes\win10-win32-aot\native" />
     <file src="..\Build\arm64\bin\*.lib" target="link\win10-arm64-aot" />
     <file src="..\Build\arm64\bin\*.dll" target="runtimes\win10-arm64-aot\native" />
-    <file src="..\Build\arm\bin\*.lib" target="link\win10-arm-aot" />
-    <file src="..\Build\arm\bin\*.dll" target="runtimes\win10-arm-aot\native" />
+    <file src="README.md" target="docs\" />
+    <file src="icon.png" target="docs\" />
   </files>
   
 </package>
